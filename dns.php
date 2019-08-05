@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER['CONTENT_TYPE'] == 'application/dns-message')
+if (isset($_SERVER['CONTENT_TYPE']) && $_SERVER['CONTENT_TYPE'] == 'application/dns-message')
 {
         $request = file_get_contents("php://input");
         header("Content-Type: application/dns-message");

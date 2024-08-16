@@ -29,7 +29,3 @@ This PHP code checks if the content type of the HTTP request is "application/dns
 If the content type is "application/dns-message", it reads the content of the request using file_get_contents("php://input"). If the 'dns' parameter is present in the URL, it decodes the base64-encoded value using base64_decode(). In both cases, it then opens a connection to the DNS server using fsockopen() and sends the request using fwrite(). The response is read using fread() and then sent back to the client using echo.
 
 Note that this code assumes that a DNS server is running on the same machine as the PHP script, listening on UDP port 53 at 127.0.0.1. Also, note that this code should only be used for testing or debugging purposes and should not be deployed in a production environment without proper security measures.
-
-## Demo
-
-I have a demo server at https://notmike.dev/dns.php but the purpose of this script is for people to deploy it on their own servers.
